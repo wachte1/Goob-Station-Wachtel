@@ -92,10 +92,11 @@ public sealed class RatvarianLanguageSystem : SharedRatvarianLanguageSystem
                 for (int i = 0; i < word.Length; i++)
                 {
                     var letter = word[i];
+                    var rand = new Random();
 
                     if (letter >= 97 && letter <= 122)
                     {
-                        var letterRot = letter + 13;
+                        var letterRot = letter + rand.Next(0,26);
 
                         if (letterRot > 122)
                             letterRot -= 26;
@@ -104,7 +105,7 @@ public sealed class RatvarianLanguageSystem : SharedRatvarianLanguageSystem
                     }
                     else if (letter >= 65 && letter <= 90)
                     {
-                        var letterRot = letter + 13;
+                        var letterRot = letter + rand.Next(0,26);
 
                         if (letterRot > 90)
                             letterRot -= 26;
